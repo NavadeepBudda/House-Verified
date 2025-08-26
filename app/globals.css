@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to modern color palette with gray-800 primary and purple accent */
+  --background: #ffffff; /* Clean white background */
+  --foreground: #1f2937; /* Dark gray text for readability */
+  --card: #f8fafc; /* Very light gray card background */
+  --card-foreground: #1f2937; /* Dark gray card text */
+  --popover: #ffffff; /* White popover background */
+  --popover-foreground: #1f2937; /* Dark gray popover text */
+  --primary: #1f2937; /* Modern dark gray primary */
+  --primary-foreground: #ffffff; /* White text on primary */
+  --secondary: #f1f5f9; /* Light gray secondary */
+  --secondary-foreground: #1f2937; /* Dark gray text on secondary */
+  --muted: #f1f5f9; /* Light gray for muted backgrounds */
+  --muted-foreground: #6b7280; /* Medium gray for muted text */
+  --accent: #8b5cf6; /* Vibrant purple accent */
+  --accent-foreground: #ffffff; /* White text on accents */
+  --destructive: #ef4444; /* Modern red for errors */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: #e2e8f0; /* Light gray borders */
+  --input: #f8fafc; /* Very light gray input backgrounds */
+  --ring: rgba(139, 92, 246, 0.5); /* Purple focus ring with opacity */
+  --chart-1: #8b5cf6; /* Purple */
+  --chart-2: #6366f1; /* Indigo */
+  --chart-3: #3b82f6; /* Blue */
+  --chart-4: #10b981; /* Emerald */
+  --chart-5: #f59e0b; /* Amber */
+  --radius: 0.5rem; /* 8px rounded corners for modern look */
+  --sidebar: #f8fafc; /* Light gray sidebar */
+  --sidebar-foreground: #1f2937; /* Dark gray sidebar text */
+  --sidebar-primary: #8b5cf6; /* Purple sidebar primary */
+  --sidebar-primary-foreground: #ffffff; /* White sidebar primary text */
+  --sidebar-accent: #6366f1; /* Indigo sidebar accent */
+  --sidebar-accent-foreground: #ffffff; /* White sidebar accent text */
+  --sidebar-border: #e2e8f0; /* Light gray sidebar border */
+  --sidebar-ring: rgba(139, 92, 246, 0.5); /* Purple sidebar focus ring */
+
+  /* Updated verification state colors */
+  --success: #10b981; /* Modern emerald for verified state */
+  --success-foreground: #ffffff; /* White text on success */
+  --warning: #f59e0b; /* Modern amber for unknown state */
+  --warning-foreground: #ffffff; /* White text on warning */
+}
+
+.dark {
+  --background: #0f172a; /* Very dark slate background */
+  --foreground: #f1f5f9; /* Light text */
+  --card: #1e293b; /* Dark slate card background */
+  --card-foreground: #f1f5f9; /* Light card text */
+  --popover: #1e293b; /* Dark slate popover */
+  --popover-foreground: #f1f5f9; /* Light popover text */
+  --primary: #8b5cf6; /* Purple primary for dark mode */
+  --primary-foreground: #ffffff; /* White text on primary */
+  --secondary: #334155; /* Medium slate secondary */
+  --secondary-foreground: #f1f5f9; /* Light secondary text */
+  --muted: #334155; /* Medium slate muted */
+  --muted-foreground: #94a3b8; /* Light slate muted text */
+  --accent: #a855f7; /* Lighter purple accent */
+  --accent-foreground: #ffffff; /* White accent text */
+  --destructive: #f87171; /* Lighter red for dark mode */
+  --destructive-foreground: #ffffff; /* White destructive text */
+  --border: #334155; /* Medium slate border */
+  --input: #1e293b; /* Dark slate input */
+  --ring: rgba(168, 85, 247, 0.5); /* Lighter purple ring */
+  --chart-1: #a855f7;
+  --chart-2: #7c3aed;
+  --chart-3: #6366f1;
+  --chart-4: #34d399;
+  --chart-5: #fbbf24;
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f1f5f9;
+  --sidebar-primary: #8b5cf6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #f1f5f9;
+  --sidebar-border: #334155;
+  --sidebar-ring: rgba(168, 85, 247, 0.5);
+
+  /* Updated verification state colors for dark mode */
+  --success: #34d399; /* Lighter emerald for dark mode */
+  --success-foreground: #ffffff;
+  --warning: #fbbf24; /* Lighter amber for dark mode */
+  --warning-foreground: #0f172a; /* Dark text on warning in dark mode */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Added success and warning color tokens */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
