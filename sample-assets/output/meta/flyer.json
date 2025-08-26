@@ -1,0 +1,12 @@
+{
+  "id": "flyer",
+  "title": "District Town Hall Flyer",
+  "type": "Image",
+  "issuedBy": "Office of Rep. Smith",
+  "signedAt": "2025-08-26T04:20:05Z",
+  "status": "verified",
+  "file": "/files/flyer.verified.png",
+  "references": [
+    { "label": "docs.house.gov notice", "url": "https://docs.house.gov/fake" }
+  ]
+}
